@@ -74,7 +74,8 @@ const modules = {
 const projectConfig = {
   jwt_secret: process.env.JWT_SECRET || "supersecret",
   cookie_secret: process.env.COOKIE_SECRET || "supersecret",
-  store_cors: STORE_CORS,
+  // store_cors: STORE_CORS,
+  store_cors: "/vercel\\.app$/",
   database_url: DATABASE_URL,
   admin_cors: process.env.ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
