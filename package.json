@@ -22,7 +22,9 @@
     "seed": "cross-env medusa seed -f ./data/seed.json",
     "start": "cross-env npm run build && medusa start",
     "start:custom": "cross-env npm run build && node --preserve-symlinks --trace-warnings index.js",
-    "dev": "cross-env npm run build:server && medusa develop"
+    "dev": "cross-env npm run build:server && medusa develop",
+    "product:migrations:run": "medusa-product-migrations-up",
+    "product:seed": "medusa-product-seed ./seed-data.js"
   },
   "dependencies": {
     "@medusajs/admin": "^7.1.14",
@@ -32,6 +34,7 @@
     "@medusajs/event-bus-redis": "^1.8.13",
     "@medusajs/file-local": "latest",
     "@medusajs/medusa": "^1.20.6",
+    "@medusajs/product": "^0.3.12",
     "@tanstack/react-query": "4.22.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

@@ -78,12 +78,18 @@ const projectConfig = {
   store_cors: "/vercel\\.app$/",
   database_url: DATABASE_URL,
   admin_cors: process.env.ADMIN_CORS,
+  store_cors: process.env.STORE_CORS,
   // Uncomment the following lines to enable REDIS
   // redis_url: REDIS_URL
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
 module.exports = {
+  featureFlags: {
+    product_categories: true,
+    // ...
+  },
+
   projectConfig,
   plugins,
   modules,

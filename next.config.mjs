@@ -16,5 +16,11 @@ const config = {
   images: {
     domains: ['youtube-booking-software.s3.eu-central-1.amazonaws.com'],
   },
+  experimental: {
+    serverComponentsExternalPackages: [
+      "@medusajs/product",
+    ],
+  },
+
 }
 export default config
