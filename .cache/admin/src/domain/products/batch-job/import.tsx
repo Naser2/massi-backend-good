@@ -101,6 +101,7 @@ function ImportProducts(props: ImportProductsProps) {
    * Upload file and use returned file key to create a batch job.
    */
   const processUpload = async (file: File) => {
+    console.log(`MEDUSA ASYNC processUpload ${file}`)
     try {
       const res = await uploadFile(file as any)
       const _fileKey = res.uploads[0].key

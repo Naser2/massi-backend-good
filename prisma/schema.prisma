@@ -34,3 +34,14 @@ model ClosedDay {
   id   String   @id @default(cuid())
   date DateTime @unique
 }
+
+model File {
+    id           String   @id @default(uuid())
+    bucket       String
+    fileName     String   @unique
+    originalName String
+    createdAt    DateTime @default(now())
+    size         Int
+}
+
+

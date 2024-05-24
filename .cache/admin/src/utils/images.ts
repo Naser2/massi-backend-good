@@ -21,6 +21,8 @@ const splitImages = (
 export const prepareImages = async (images: FormImage[]) => {
   const { uploadImages, existingImages } = splitImages(images)
 
+  console.log("UPLOAD_IMAGES ION prepareImages", data.media.images)
+
   let uploadedImgs: FormImage[] = []
   if (uploadImages.length > 0) {
     const files = uploadImages.map((i) => i.nativeFile)

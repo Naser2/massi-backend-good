@@ -117,9 +117,11 @@ const NewProduct = ({ onClose }: Props) => {
 
       if (data.media?.images?.length) {
         let preppedImages: FormImage[] = []
+        console.log("DATA_IMAGES", data.media.images)
 
         try {
           preppedImages = await prepareImages(data.media.images)
+          console.log("PREPED_IMAGES", data.media.images)
         } catch (error) {
           let errorMessage = t(
             "new-something-went-wrong-while-trying-to-upload-images",
@@ -147,15 +149,18 @@ const NewProduct = ({ onClose }: Props) => {
 
       if (data.thumbnail?.images?.length) {
         let preppedImages: FormImage[] = []
+        console.log("DATA_THUMBNAIL", data.media.images)
 
         try {
           preppedImages = await prepareImages(data.thumbnail.images)
+          console.log("PREPED_ITHUMBNAIL", data.media.images)
         } catch (error) {
           let errorMessage = t(
             "new-upload-thumbnail-error",
             "Something went wrong while trying to upload the thumbnail."
           )
           const response = (error as any).response as Response
+
 
           if (response.status === 500) {
             errorMessage =
@@ -171,6 +176,7 @@ const NewProduct = ({ onClose }: Props) => {
           return
         }
         const urls = preppedImages.map((image) => image.url)
+        console.log("URLS_IMAGES", data.media.images)
 
         payload.thumbnail = urls[0]
       }
