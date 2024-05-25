@@ -16,7 +16,8 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['youtube-booking-software.s3.eu-central-1.amazonaws.com'],
+    domains: ["172.21.87.9"],
+    // domains: ['youtube-booking-software.s3.eu-central-1.amazonaws.com'],
   },
   experimental: {
     serverComponentsExternalPackages: [
